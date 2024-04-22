@@ -1,10 +1,10 @@
 //! An incomplete set of data transfer objects (DTOs) and errors for
 //! Synology DSM APIs.
-//! 
+//!
 //! ## Features
-//! 
+//!
 //! By default, all of the following features are enabled.
-//! 
+//!
 //! * `dto` - provides DTOs for various JSON responses produced by
 //!   Synology DSM APIs
 //! * `error` - provides enums implementing `Error` and `Display` traits,
