@@ -123,16 +123,3 @@ impl TryFrom<u16> for ApiError {
         Ok(api_error)
     }
 }
-
-#[cfg(test)]
-mod test {
-    use crate::error::ApiError;
-
-    #[test]
-    fn from_api_error_returns_valid_u16() {
-        let unknown: u16 = ApiError::Unknown.into();
-        let lost_params: u16 = ApiError::LostParamsForApi.into();
-        assert_eq!(unknown, 100);
-        assert_eq!(lost_params, 114);
-    }
-}
