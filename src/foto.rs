@@ -219,6 +219,12 @@ pub mod background_task {
     }
 }
 
+pub mod sharing {
+    pub mod misc {
+        pub const API: &str = "SYNO.Foto.Sharing.Misc";
+    }
+}
+
 #[cfg(feature = "error")]
 pub mod error {
     //! "Unofficial" errors detected so far.
