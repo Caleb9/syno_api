@@ -98,6 +98,27 @@ pub mod browse {
             }
         }
     }
+
+    pub mod person {
+        pub const API: &str = "SYNO.Foto.Browse.Person";
+
+        #[cfg(feature = "dto")]
+        pub mod dto {
+            #[cfg(feature = "serde")]
+            use serde::{Deserialize, Serialize};
+
+            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct Person {
+                pub id: u32,
+                pub item_count: u32,
+                pub name: String,
+                pub show: bool,
+                pub cover: u32, // ?
+                                // "additional" { "thumbnail": { "cache_key": String } }
+            }
+        }
+    }
 }
 
 pub mod setting {
