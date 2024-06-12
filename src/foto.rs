@@ -41,12 +41,14 @@ pub mod browse {
                 pub owner_user_id: u32,
                 pub passphrase: String,
                 pub shared: bool,
+                #[serde(default)]
                 pub temporary_shared: bool,
                 pub sort_by: String,
                 pub sort_direction: String,
                 pub create_time: u64,
                 pub start_time: u64,
                 pub end_time: u64,
+                #[serde(default)]
                 pub freeze_album: bool,
                 pub version: u32,
             }
