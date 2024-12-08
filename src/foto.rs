@@ -72,6 +72,19 @@ pub mod browse {
                 pub indexed_time: u64,
                 pub owner_user_id: u32,
                 pub folder_id: u32,
+                pub additional: Option<Additional>,
+            }
+
+            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct Additional {
+                pub thumbnail: Option<Thumbnail>,
+            }
+
+            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct Thumbnail {
+                pub cache_key: String,
             }
         }
     }
