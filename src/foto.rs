@@ -11,7 +11,7 @@ pub mod search {
         #[cfg(feature = "serde")]
         use serde::{Deserialize, Serialize};
 
-        #[derive(Debug, Eq, PartialEq, Hash)]
+        #[derive(Debug, Default, Eq, PartialEq, Hash)]
         #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
         pub struct Search {
             pub id: u32,
@@ -31,7 +31,7 @@ pub mod browse {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Album {
                 pub id: u32,
@@ -61,7 +61,7 @@ pub mod browse {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Item {
                 pub id: u32,
@@ -75,13 +75,13 @@ pub mod browse {
                 pub additional: Option<Additional>,
             }
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Additional {
                 pub thumbnail: Option<Thumbnail>,
             }
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Thumbnail {
                 pub cache_key: String,
@@ -97,7 +97,7 @@ pub mod browse {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Folder {
                 pub id: u32,
@@ -120,7 +120,7 @@ pub mod browse {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Person {
                 pub id: u32,
@@ -128,8 +128,10 @@ pub mod browse {
                 pub name: String,
                 pub show: bool,
                 pub cover: u32, // ?
-                                // "additional" { "thumbnail": { "cache_key": String } }
+                pub additional: Option<Additional>
             }
+
+            pub use crate::foto::browse::item::dto::{Additional, Thumbnail};
         }
     }
 }
@@ -143,7 +145,7 @@ pub mod setting {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct UserSettings {
                 pub enable_home_service: bool,
@@ -163,7 +165,7 @@ pub mod user_info {
         #[cfg(feature = "serde")]
         use serde::{Deserialize, Serialize};
 
-        #[derive(Debug, Eq, PartialEq, Hash)]
+        #[derive(Debug, Default, Eq, PartialEq, Hash)]
         #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
         pub struct UserInfo {
             pub id: u32,
@@ -174,7 +176,7 @@ pub mod user_info {
             pub profile: UserProfile,
         }
 
-        #[derive(Debug, Eq, PartialEq, Hash)]
+        #[derive(Debug, Default, Eq, PartialEq, Hash)]
         #[cfg_attr(
             feature = "serde",
             derive(Deserialize, Serialize),
@@ -196,7 +198,7 @@ pub mod user_info {
             pub user_name: String,
         }
 
-        #[derive(Debug, Eq, PartialEq, Hash)]
+        #[derive(Debug, Default, Eq, PartialEq, Hash)]
         #[cfg_attr(
             feature = "serde",
             derive(Deserialize, Serialize),
@@ -218,7 +220,7 @@ pub mod background_task {
             #[cfg(feature = "serde")]
             use serde::{Deserialize, Serialize};
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct TaskInfo {
                 pub id: u32,
@@ -234,7 +236,7 @@ pub mod background_task {
                 pub total: u32,
             }
 
-            #[derive(Debug, Eq, PartialEq, Hash)]
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct TargetFolder {
                 pub id: u32,

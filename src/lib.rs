@@ -36,7 +36,7 @@ pub mod dto {
 
     pub type ApiResponseWithList<T> = ApiResponse<List<T>>;
 
-    #[derive(Debug, Eq, PartialEq, Hash)]
+    #[derive(Debug, Default, Eq, PartialEq, Hash)]
     #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
     pub struct List<T> {
         pub list: Vec<T>,
