@@ -79,12 +79,22 @@ pub mod browse {
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Additional {
                 pub thumbnail: Option<Thumbnail>,
+                pub resolution: Option<Resolution>,
+                pub orientation: Option<u8>,
+                pub orientation_original: Option<u8>,
             }
 
             #[derive(Debug, Default, Eq, PartialEq, Hash)]
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Thumbnail {
                 pub cache_key: String,
+            }
+
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct Resolution {
+                pub width: u32,
+                pub height: u32,
             }
         }
     }
