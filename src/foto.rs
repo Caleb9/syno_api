@@ -88,6 +88,7 @@ pub mod browse {
             #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
             pub struct Thumbnail {
                 pub cache_key: String,
+                pub unit_id: u32,
             }
 
             #[derive(Debug, Default, Eq, PartialEq, Hash)]
