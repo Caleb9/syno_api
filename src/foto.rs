@@ -139,7 +139,7 @@ pub mod browse {
                 pub name: String,
                 pub show: bool,
                 pub cover: u32, // ?
-                pub additional: Option<Additional>
+                pub additional: Option<Additional>,
             }
 
             pub use crate::foto::browse::item::dto::{Additional, Thumbnail};
