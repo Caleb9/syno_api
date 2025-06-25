@@ -166,6 +166,24 @@ pub mod setting {
             }
         }
     }
+
+    pub mod team_space {
+        pub const API: &str = "SYNO.Foto.Setting.TeamSpace";
+
+        #[cfg(feature = "dto")]
+        pub mod dto {
+            #[cfg(feature = "serde")]
+            use serde::{Deserialize, Serialize};
+
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct TeamSpaceSettings {
+                pub enabled: bool,
+                pub enable_person: Option<bool>,
+                // ...
+            }
+        }
+    }
 }
 
 pub mod user_info {

@@ -17,6 +17,13 @@ pub mod browse {
 
         pub const API: &str = "SYNO.FotoTeam.Browse.Person";
     }
+
+    pub mod item {
+        #[cfg(feature = "dto")]
+        pub use crate::foto::browse::item::dto::Item;
+
+        pub const API: &str = "SYNO.FotoTeam.Browse.Item";
+    }
 }
 
 pub mod background_task {
