@@ -82,6 +82,7 @@ pub mod browse {
                 pub resolution: Option<Resolution>,
                 pub orientation: Option<u8>,
                 pub orientation_original: Option<u8>,
+                pub address: Option<Address>,
             }
 
             #[derive(Debug, Default, Eq, PartialEq, Hash)]
@@ -97,6 +98,30 @@ pub mod browse {
                 pub width: u32,
                 pub height: u32,
             }
+
+            #[derive(Debug, Default, Eq, PartialEq, Hash)]
+            #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+            pub struct Address {
+                pub country: String,
+                pub country_id: String,
+                pub state: String,
+                pub state_id: String,
+                pub county: String,
+                pub county_id: String,
+                pub city: String,
+                pub city_id: String,
+                pub town: String,
+                pub town_id: String,
+                pub district: String,
+                pub district_id: String,
+                pub village: String,
+                pub village_id: String,
+                pub route: String,
+                pub route_id: String,
+                pub landmark: String,
+                pub landmark_id: String,
+            }
+
         }
     }
 
